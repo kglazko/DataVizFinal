@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no">
+  <meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+  <title>House Exploration</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+  <!-- Top Info -->
+  <div class="instructions">
+    <span class="title">Explore The House</span><br>
+    <span class="description">Use side arrows to navigate elements of the same level. Use up/down arrows to move between levels. Press enter to read the current element.</span>
+  </div>
+
+  <!-- Waveform -->
+  <div id="waveform"></div>
+
+  <!-- Sprite Click Areas -->
+  <div class="sprites row">
+
+  <div class="col l12">
+        <div class = "row">
+        <div class = "col s12">
+    <div id="house2" class="sprite">
+      <div class="sprite-label">22 Apple Road</div>
+    </div>
+  </div>
+    </div>
+        <div class = "row">
+        <div class = "col l2">
+    <div id="room21" class="sprite">
+      <div class="sprite-label">Living Room</div>
+    </div>
+    <div class = "col l6">
+        <div id="couch" class="sprite">
+      <div class="sprite-label">Couch</div>
+    </div>
+      </div>
+
+      <div class = "col l6">
+        <div id="lamp1_5" class="sprite">
+      <div class="sprite-label">Lamp</div>
+    </div>
+      </div>
+  </div>
+
+  <div class = "col l4">
+    <div id="room22" class="sprite">
+      <div class="sprite-label">Dining Room</div>
+    </div>
+    <div class = "row">
+      <div class = "col l2">
+        <div id="chair1_1" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="chair1_2" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="chair1_3" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="chair1_4" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="table1_1" class="sprite">
+      <div class="sprite-label">Table</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="lamp1_1" class="sprite">
+      <div class="sprite-label">Lamp</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "col l2">
+    <div id="room23" class="sprite">
+      <div class="sprite-label">Bedroom</div>
+    </div>
+      <div class = "row">
+      <div class = "col l6">
+        <div id="bed1_1" class="sprite">
+      <div class="sprite-label">Bed</div>
+    </div>
+      </div>
+
+      <div class = "col l6">
+        <div id="lamp1_2" class="sprite">
+      <div class="sprite-label">Lamp</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "col l2">
+    <div id="room24" class="sprite">
+      <div class="sprite-label">Attic</div>
+    </div>
+      <div class = "row">
+      <div class = "col l4">
+        <div id="lamp1_3" class="sprite">
+      <div class="sprite-label">Lamp</div>
+    </div>
+      </div>
+
+      <div class = "col l4">
+        <div id="table1_2" class="sprite">
+      <div class="sprite-label">Table</div>
+    </div>
+      </div>
+
+      <div class = "col l4">
+        <div id="lamp1_4" class="sprite">
+      <div class="sprite-label">Lamp</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "col l2">
+    <div id="room25" class="sprite">
+      <div class="sprite-label">Kitchen</div>
+    </div>
+    <div class = "row">
+            <div class = "col l12">
+        <div id="table1_3" class="sprite">
+      <div class="sprite-label">Table</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="src/howler.core.js"></script>
+    <script src="src/plugins/howler.spatial.js"></script>
+  <script src="nonspatial.js"></script>
+
+</body>
+</html>

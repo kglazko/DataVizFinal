@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no">
+  <meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
+  <title>House Exploration</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+  <!-- Top Info -->
+  <div class="instructions">
+    <span class="title">Explore The House</span><br>
+    <span class="description">Use side arrows to navigate elements of the same level. Use up/down arrows to move between levels. Press enter to read the current element.</span>
+  </div>
+
+  <!-- Waveform -->
+  <div id="waveform"></div>
+
+  <!-- Sprite Click Areas -->
+  <div class="sprites row">
+    <div class = "col l12">
+      <div class = "row">
+        <div class = "col s12">
+    <div id="house1" class="sprite">
+      <div class="sprite-label">21 Apple Road</div>
+    </div>
+  </div>
+    </div>
+
+    <div class = "row">
+        <div class = "col l4">
+    <div id="room1" class="sprite">
+      <div class="sprite-label">Bedroom</div>
+    </div>
+    <div class = "row">
+      <div class = "col l2">
+        <div id="chair1" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="fan1" class="sprite">
+      <div class="sprite-label">Fan</div>
+    </div>
+      </div>
+
+      <div class = "col l3">
+        <div id="cabinet1" class="sprite">
+      <div class="sprite-label">Cabinet</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="bed1" class="sprite">
+      <div class="sprite-label">Bed</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="bed2" class="sprite">
+      <div class="sprite-label">Bed</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "col l4">
+    <div id="room2" class="sprite">
+      <div class="sprite-label">Kitchen</div>
+    </div>
+        <div class = "row">
+      <div class = "col l2">
+        <div id="chair2" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="chair3" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="chair4" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="chair5" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="table1" class="sprite">
+      <div class="sprite-label">Table</div>
+    </div>
+      </div>
+
+      <div class = "col l2">
+        <div id="fan2" class="sprite">
+      <div class="sprite-label">Fan</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "col l2">
+    <div id="room3" class="sprite">
+      <div class="sprite-label">Backyard</div>
+    </div>
+        <div class = "row">
+      <div class = "col l6">
+        <div id="tree1" class="sprite">
+      <div class="sprite-label">Tree</div>
+    </div>
+      </div>
+
+      <div class = "col l6">
+        <div id="tree2" class="sprite">
+      <div class="sprite-label">Tree</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "col l1">
+    <div id="room4" class="sprite">
+      <div class="sprite-label">Attic</div>
+    </div>
+            <div class = "row">
+      <div class = "col l12">
+        <div id="chair6" class="sprite">
+      <div class="sprite-label">Chair</div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="src/howler.core.js"></script>
+    <script src="src/plugins/howler.spatial.js"></script>
+  <script src="clone.js"></script>
+
+</body>
+</html>
