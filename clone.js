@@ -9,39 +9,35 @@
  */
 
 // Cache references to DOM elements.
-var house1Array = ['house1', 'house1', 'house1', 'room1'];
+var house1Array = ['clap', 'clap', 'clap', 'room1'];
 
-var room1Array = ['room1', 'room2', 'house1', 'chair1'];
-var cabinet1Array = ['fan1', 'bed1', 'room1', 'room1'];
-var fan1Array = ['chair1', 'cabinet1', 'room1', 'room1'];
-var chair1Array = ['room1', 'fan1', 'room1', 'room1'];
-var bed1Array = ['cabinet1', 'bed2', 'room1', 'bed1'];
-var bed2Array = ['bed1', 'room1', 'room1', 'room1'];
+var room1Array = ['clap', 'room2', 'house1', 'chair1'];
+var cabinet1Array = ['fan1', 'bed1', 'room1', 'clap'];
+var fan1Array = ['chair1', 'cabinet1', 'room1', 'clap'];
+var chair1Array = ['clap', 'fan1', 'room1', 'clap'];
+var bed1Array = ['cabinet1', 'bed2', 'room1', 'clap'];
+var bed2Array = ['bed1', 'clap', 'room1', 'clap'];
 
 var room2Array = ['room1', 'room3', 'house1', 'chair2'];
-var chair2Array = ['room2', 'chair3', 'room2', 'room2'];
-var chair3Array = ['chair2', 'chair4', 'room2', 'room2'];
-var chair4Array = ['chair3', 'chair5', 'room2', 'room2'];
-var chair5Array = ['chair4', 'table1', 'room2', 'room2'];
-var table1Array = ['chair5', 'fan2', 'room2', 'room2'];
-var fan2Array = ['table1', 'room2', 'room2', 'room2'];
+var chair2Array = ['clap', 'chair3', 'room2', 'clap'];
+var chair3Array = ['chair2', 'chair4', 'room2', 'clap'];
+var chair4Array = ['chair3', 'chair5', 'room2', 'clap'];
+var chair5Array = ['chair4', 'table1', 'room2', 'clap'];
+var table1Array = ['chair5', 'fan2', 'room2', 'clap'];
+var fan2Array = ['table1', 'clap', 'room2', 'clap'];
 
 var room3Array = ['room2', 'room4', 'house1', 'tree1'];
-var tree1Array = ['room3', 'tree2', 'room3', 'room3'];
-var tree2Array = ['tree1', 'room3', 'room3', 'room3'];
+var tree1Array = ['clap', 'tree2', 'room3', 'clap'];
+var tree2Array = ['tree1', 'clap', 'room3', 'clap'];
 
-var room4Array = ['room3', 'room1', 'house1', 'chair6' ];
-var chair6Array = ['room4', 'room4', 'room4', 'room4'];
+var room4Array = ['room3', 'clap', 'house1', 'chair6' ];
+var chair6Array = ['clap', 'clap', 'room4', 'clap'];
 
 var selected_node = 'house1';
 var rightTracker = 1;
 var leftTracker = 1;
 
-var h1_rooms = 4;
-var r1_f = 5;
-var r2_f = 6;
-var r3_f = 2;
-var r4_f = 1;
+var playTones = true;
 
 var elms = ['waveform', 'sprite0', 'sprite1', 'sprite2', 'sprite3', 'sprite4', 'sprite5'];
 elms.forEach(function(elm) {
@@ -77,37 +73,63 @@ var Sprite = function(options) {
 
   window.addEventListener("keydown", function(event) {
       event.preventDefault();
-      self.sound.unload();
       const keyDown = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
     switch (keyDown) { // change to event.key to key to use the above variable
+      case "Enter":
+          var id = self.play(selected_node);
+          console.log("I read this");
+          break;
+
       case "ArrowLeft":
       // Left pressed
       leftTracker += 1;
       rightTracker -=1;
       console.log(window[selected_node + 'Array'][0]);
-      var id = self.play(window[selected_node + 'Array'][0]);
-      //self.sound.pos(-100 ,0,-0.5);
+      if (window[selected_node + 'Array'][0] === "clap") {
+        var id = self.sound.play("clap");
+      }
+      else {var id = self.play(window[selected_node + 'Array'][0]);
       selected_node = window[selected_node + 'Array'][0];
+      }
       break;
 
     case "ArrowRight":
       // Right pressed
       rightTracker += 1;
       leftTracker -= 1;
-      var id = self.play(window[selected_node + 'Array'][1]);
-      //self.sound.pos(100,0,-0.5, id);
+      if (window[selected_node + 'Array'][1] === "clap") {
+        var id = self.sound.play("clap");
+      }
+      else {var id = self.play(window[selected_node + 'Array'][1]);
       selected_node = window[selected_node + 'Array'][1];
+      }
       break;
 
     case "ArrowUp":
       // Up pressed
-      self.play(window[selected_node + 'Array'][2]);
+      if (window[selected_node + 'Array'][2] === "clap") {
+        var id = self.sound.play("clap");      }
+      else {var id = self.play(window[selected_node + 'Array'][2]);
       selected_node = window[selected_node + 'Array'][2];
+      }
       break;
     case "ArrowDown":
       // Down pressed
-      self.play(window[selected_node + 'Array'][3]);
+      if (window[selected_node + 'Array'][3] === "clap") {
+        var id = self.sound.play("clap");
+      }
+      else {var id = self.play(window[selected_node + 'Array'][3]);
       selected_node = window[selected_node + 'Array'][3];
+      }
+      break;
+    case "Shift":
+      if (playTones) {
+        playTones = false;
+      }
+
+      else {
+        playTones = true;
+      }
       break;
   }
 }); 
@@ -237,6 +259,7 @@ Sprite.prototype = {
     
 
     self.sound.once('end', function() {
+      if (playTones) {
     if(key.includes('room1')){
       self.play2('medium', key, -1.0);
     }
@@ -257,10 +280,15 @@ Sprite.prototype = {
     else if (key.includes('house1')) {
       self.play2('low', key, 0.0);
     }
+
+    else if (key.includes('clap')) {
+      console.log("nothing happens");
+    }
     else {
       self.play2('high');
     }
-    });
+    }
+  });
 
     // Create a progress element and begin visually tracking it.
     var elm = document.createElement('div');
@@ -448,7 +476,7 @@ Sprite.prototype = {
 var sprite = new Sprite({
   //width: [100, 100, 100, 100, 100, 100],
   //left: [0, 342, 680, 1022, 1361],
-  src: ['tests/audio/study2.webm', 'tests/audio/study2.mp3'],
+  src: ['tests/audio/study3.webm', 'tests/audio/study3.mp3'],
   sprite: {
     //h1
     one: [0, 1200],
@@ -479,7 +507,8 @@ var sprite = new Sprite({
     cabinet: [8600,400],
     high: [9050, 200],
     medium: [9400, 200],
-    low: [9700, 300]
+    low: [9700, 300],
+    clap: [10000, 300]
 
   },
   spriteMap: {
@@ -550,5 +579,6 @@ var sprite = new Sprite({
     //Chimes
     high: 'high',
     medium: 'medium',
-    low: 'low' }
+    low: 'low',
+    clap: 'clap' }
 });
